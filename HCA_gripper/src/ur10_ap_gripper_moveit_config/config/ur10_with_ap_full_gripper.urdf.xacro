@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur10_with_ap_full_gripper">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import ur10_with_ap_full_gripper urdf file -->
+    <xacro:include filename="$(find ur10_gripper_description)/urdf/ur10_with_gripper.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="ur10_with_ap_full_gripper.ros2_control.xacro" />
+
+
+    <xacro:ur10_with_ap_full_gripper_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

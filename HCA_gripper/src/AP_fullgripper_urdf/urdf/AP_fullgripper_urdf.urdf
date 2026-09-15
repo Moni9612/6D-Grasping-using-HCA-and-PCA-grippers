@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="AP_fullgripper_urdf">
+  <link
+    name="ap_gripper_base_link">
+    <inertial>
+      <origin
+        xyz="-2.5922E-06 -0.017647 0.04228"
+        rpy="0 0 0" />
+      <mass
+        value="0.25616" />
+      <inertia
+        ixx="0.00035197"
+        ixy="-9.2248E-08"
+        ixz="6.3513E-09"
+        iyy="0.0003382"
+        iyz="9.2522E-06"
+        izz="0.00035858" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AP_fullgripper_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AP_fullgripper_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_Link">
+    <inertial>
+      <origin
+        xyz="0.020972 -0.018885 -0.0095125"
+        rpy="0 0 0" />
+      <mass
+        value="0.15431" />
+      <inertia
+        ixx="0.00010847"
+        ixy="-6.731E-06"
+        ixz="2.411E-06"
+        iyy="4.784E-05"
+        iyz="4.9173E-06"
+        izz="8.4969E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AP_fullgripper_urdf/meshes/left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AP_fullgripper_urdf/meshes/left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_finger"
+    type="prismatic">
+    <origin
+      xyz="0.09 0.0265 0.1018"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="ap_gripper_base_link" />
+    <child
+      link="left_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0.005"
+      upper="0.025"
+      effort="4"
+      velocity="0.059" />
+  </joint>
+  <link
+    name="right_Link">
+    <inertial>
+      <origin
+        xyz="0.16245 -0.04185 -0.00075"
+        rpy="0 0 0" />
+      <mass
+        value="0.0034681" />
+      <inertia
+        ixx="2.0155E-07"
+        ixy="-2.8046E-23"
+        ixz="-1.4199E-21"
+        iyy="2.0155E-07"
+        iyz="2.3683E-22"
+        izz="3.8865E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AP_fullgripper_urdf/meshes/right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AP_fullgripper_urdf/meshes/right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_finger"
+    type="prismatic">
+    <origin
+      xyz="0.09 0.0265 0.1018"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="ap_gripper_base_link" />
+    <child
+      link="right_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0.005"
+      upper="0.025"
+      effort="4"
+      velocity="0.059" />
+  </joint>
+</robot>
