@@ -46,19 +46,15 @@ Navigate to **Installation on Ubuntu** and complete:
 - **Step 2:** Install the latest Intel® RealSense™ SDK 2.0 using **Option 2**
 - **Step 3:** Install the ROS Wrapper for Intel® RealSense™ Cameras
 
+### Set up AnyGrasp
+
+Install **AnyGrasp SDK** inside a Docker container, as it supports multiple CUDA and Python versions: [AnyGrasp SDK](https://github.com/graspnet/anygrasp_sdk)
+
 ---
-
-# HCA Gripper — 6D Grasping Pipeline
-
-The HCA grasping pipeline integrates the **Hybrid Compliance Activation (HCA) gripper** with the robotic manipulation system to perform 6D grasping of inorganic waste objects in cluttered environments using **AnyGrasp**.
 
 ## Prerequisites
 
 Ensure that the **AnyGrasp Docker container** is running in the background.
-
-Install the **AnyGrasp SDK** inside a Docker container, as it supports multiple CUDA and Python versions:
-
-[AnyGrasp SDK](https://github.com/graspnet/anygrasp_sdk)
 
 Replace the provided `demo.py` inside:
 
@@ -76,6 +72,10 @@ git clone https://github.com/Moni9612/6D-Grasping-using-HCA-and-PCA-grippers.git
 
 ---
 
+# HCA Gripper — 6D Grasping Pipeline
+
+The HCA grasping pipeline integrates the **Hybrid Compliance Activation (HCA) gripper** with the robotic manipulation system to perform 6D grasping of inorganic waste objects in cluttered environments using **AnyGrasp**.
+
 ## Build the HCA Workspace
 
 Navigate to the HCA gripper workspace:
@@ -90,16 +90,12 @@ Build the workspace:
 colcon build
 ```
 
----
-
 ## Step 1: Source the Environment
 
 ```bash
 source /opt/ros/humble/setup.bash
 source install/setup.bash
 ```
-
----
 
 ## Step 2: Launch the System
 
@@ -109,8 +105,6 @@ Launch the required system components, including the **UR10 driver, MoveIt 2, an
 ros2 launch static_tf combined_launch.py
 ```
 
----
-
 ## Step 3: Activate the HCA Gripper
 
 Start the Dynamixel motor control node:
@@ -118,8 +112,6 @@ Start the Dynamixel motor control node:
 ```bash
 ros2 run dynamixel_motor dynamixel_position_node
 ```
-
----
 
 ## Step 4: Launch the 6D Grasping Pipeline
 
